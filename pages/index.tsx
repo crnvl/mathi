@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
 	return <>
-		<div className='flex h-screen w-screen justify-center bg-red-50'>
+		<div className='flex h-screen w-screen justify-center bg-blue-50'>
 			<div className="m-auto">
 				<div className='flex flex-col items-center gap-2'>
 					<h1 className='py-2 text-5xl font-serif'>69 - 42</h1>
