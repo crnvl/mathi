@@ -7,5 +7,5 @@ COPY . .
 EXPOSE 3000
 RUN chown -R node /usr/src/mathi
 USER node
-CMD ["npm", "build"]
+RUN npm run build
 CMD ["npm", "start"]
