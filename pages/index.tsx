@@ -58,8 +58,8 @@ const Home: NextPage = () => {
 					<h1 className='py-2 text-5xl font-serif'>{calc}</h1>
 					<div className='flex flex-col w-full justify-center gap-2'>
 						<input
-							id='calc' 
-							type="text" 
+							id='calc'
+							type="text"
 							className="rounded-md text-center text-gray-800 py-2 focus:shadow-md outline-none border-white transition ease-in-out duration-300"
 							value={inputValue}
 							onChange={handleInput}
@@ -67,6 +67,9 @@ const Home: NextPage = () => {
 						{errorField()}
 					</div>
 				</div>
+			</div>
+			<div className='absolute bottom-5 font-bold'>
+				<p><a href='https://github.com/angelsflyinhell/mathi' className='underline'>GitHub</a> | <a href='https://qwq.sh' className='underline'>qwq.sh</a></p>
 			</div>
 		</div>
 	</>
