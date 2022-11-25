@@ -1,5 +1,4 @@
 name: 'Deploy Page'
-description: 'Builds and uploads the current main branch to the production server.'
 
 on:
   workflow_run:
