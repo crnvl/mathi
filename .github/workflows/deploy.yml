@@ -1,0 +1,24 @@
+name: 'Deploy Page'
+description: 'Builds and uploads the current main branch to the production server.'
+
+on:
+  workflow_run:
+    workflows: ["codeql"]
+    branches: main
+    types: completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Deploy
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          target: ${{ secrets.TARGET }}
+          source: "."
