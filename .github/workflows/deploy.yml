@@ -1,0 +1,34 @@
+name: Deploy Page
+
+on:
+	push:
+		branches:
+			- main
+
+jobs:
+	deploy:
+		name: Deploy Page
+		runs-on: ubuntu-latest
+
+		steps:
+			- uses: actions/checkout@v1
+
+			- name: Node
+				uses: actions/setup-node@v1
+				with:
+					node-version: latest
+
+			- name: Build
+				run: |
+					npm i
+					npm run build
+			
+			- name: Copy Files
+				uses: appleboy/scp-action@master
+				with: 
+					HOST: ${{ secrets.HOST }}
+					PORT: ${{ secrets.PORT }}
+					USERNAME: ${{ secrets.USERNAME }}
+					PASSWORD: ${{ secrets.PASSWORD }}
+					TARGET: ${{ secrets.TARGET }}
+					source: "./*"
