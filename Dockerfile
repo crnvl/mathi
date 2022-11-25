@@ -1,9 +1,8 @@
 FROM node:latest
+RUN npm install -g npm
 ENV NODE_ENV=production
 WORKDIR /usr/src/mathi
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install -g npm@9.1.2
-RUN npm install --save-dev eslint
 RUN npm install --production --silent && mv node_modules ../
 COPY . .
 EXPOSE 3002
