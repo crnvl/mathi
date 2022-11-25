@@ -7,6 +7,5 @@ RUN npm install --production --silent && mv node_modules ../
 COPY . .
 EXPOSE 3002
 RUN chown -R node /usr/src/mathi
-USER node
-RUN npm run build
+USER nextjs
 CMD ["npm", "start"]
