@@ -9,4 +9,3 @@ EXPOSE 3002
 RUN chown -R node /usr/src/mathi
 USER node
 RUN npm run build
-CMD ["npm", "start"]
