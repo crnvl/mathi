@@ -26,10 +26,12 @@ const Home: NextPage = () => {
 
 	const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (!calc) return;
-		const result = eval(calc);
-		const input = e.target.value;
 
-		if (input.replace(',', '.') === result.toString()) {
+		const input = e.target.value.replace(',', '.');
+		if (!/^[0-9.-]*$/.test(input)) return;
+
+		const result = eval(calc);
+		if (input === result.toString()) {
 			setupState();
 			return;
 		}
