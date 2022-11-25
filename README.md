@@ -16,5 +16,5 @@ $ npm run start
 ## Docker
 ```console
 docker pull ghcr.io/angelsflyinhell/mathi:latest
-docker run -p 3002:3002 mathi
+docker run -p 3002:3002 ghcr.io/angelsflyinhell/mathi:latest
 ```
