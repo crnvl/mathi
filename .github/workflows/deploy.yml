@@ -21,5 +21,5 @@ jobs:
         image: snapchat-data-viewer
         tags: latest
         registry: ghcr.io
-        username: ${{ github.USERNAME }}
+        username: ${{ secrets.USERNAME }}
         password: ${{ secrets.TOKEN }}
