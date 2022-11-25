@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+	if: ${{ github.event_name != 'pull_request' && github.event.action != 'opened' }}
 
     steps:
     - uses: actions/checkout@v3
