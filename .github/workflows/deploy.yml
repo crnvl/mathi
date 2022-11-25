@@ -1,10 +1,9 @@
 name: docker_deploy
 
 on:
-  workflow_run:
-    workflows: ["codeql"]
-    branches: main
-    types: completed
+  push:
+	branches:
+	  - main
 
 jobs:
   build:
