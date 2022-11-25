@@ -1,11 +1,9 @@
 FROM node:latest
 RUN npm install -g npm
 ENV NODE_ENV=production
-WORKDIR /usr/src/mathi
+WORKDIR /usr/src/
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --production --silent && mv node_modules ../
 COPY . .
 EXPOSE 3002
-RUN chown -R node /usr/src/mathi
-USER nextjs
-CMD ["npm", "start"]
+ENTRYPOINT ["npm", "start"]
