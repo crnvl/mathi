@@ -13,9 +13,12 @@ jobs:
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
-    steps: 
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    steps:
+    - name: Setup Node (1/2)
+      uses: actions/checkout@v3
+      
+    - name: Setup Node (2/2)
+      uses: actions/setup-node@v3
 		  
     - name: Build and push the Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
