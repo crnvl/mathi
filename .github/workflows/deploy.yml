@@ -1,0 +1,25 @@
+name: docker_deploy
+
+on:
+  workflow_run:
+    workflows: ["codeql"]
+    branches: main
+    types: completed
+
+jobs:
+  build:
+    name: Deployment
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and push the Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: snapchat-data-viewer
+        tags: latest
+        registry: ghcr.io
+        username: ${{ github.USERNAME }}
+        password: ${{ secrets.TOKEN }}
