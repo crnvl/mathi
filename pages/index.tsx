@@ -54,7 +54,7 @@ const Home: NextPage = () => {
 			<title>math | qwq.sh</title>
 			<meta name="description" content="Train your mental arithmetic skills." />
 		</Head>
-		<div className='flex h-screen w-screen justify-center bg-red-200'>
+		<div className='flex h-screen w-screen justify-center bg-blue-200'>
 			<div className="m-auto">
 				<div className='flex flex-col items-center gap-2'>
 					<h1 className='py-2 text-5xl font-serif'>{calc}</h1>
